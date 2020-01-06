@@ -8,6 +8,8 @@ resource "azurerm_resource_group" "example" {
   tags     = "${var.tags}"
 }
 
+
+
 ## Outputs
 output "resourcegroup-id" {
   value       = "${azurerm_resource_group.create-rg.id}"
