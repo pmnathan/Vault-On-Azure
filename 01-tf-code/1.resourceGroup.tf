@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "example" {
   tags     = "${var.tags}"
 }
 
-
+#this is a test
 
 ## Outputs
 output "resourcegroup-id" {
