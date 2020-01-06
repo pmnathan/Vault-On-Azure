@@ -24,3 +24,12 @@ variable "tags" {
   type        = "map"
   default     = {}
 }
+
+// - Note the below variables can be pulled from HashiCorp Vault.
+variable "storeWindows_UserName" {
+  description = "Define the admin UserName to be used for provisioning the VM's"
+}
+
+variable "storeWindows_Password" {
+  description = "Define the admin Password to be used for provisioning the VM's"
+}
