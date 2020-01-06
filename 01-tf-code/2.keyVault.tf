@@ -2,9 +2,6 @@ locals {
   virtual_machine_name = "${var.prefix}-vm"
   admin_username       = "${var.storeWindows_UserName}"
   admin_password       = "${var.storeWindows_Password}"
-}
-
-data "azurerm_resource_group" "example" {
   name = "${var.prefix}-resources"
 }
 
@@ -13,9 +10,9 @@ data "azurerm_client_config" "current" {}
 // Create a AZ Key Vault
 resource "azurerm_key_vault" "example" {
   name                = "${var.prefix}-keyvault"
-  location            = "${data.azurerm_resource_group.example.location}"
-  resource_group_name = "${data.azurerm_resource_group.example.name}"
-  tenant_id           = "${data.azurerm_client_config.current.tenant_id}"
+  location            = "${var.location}"
+  resource_group_name = "${var.name}"
+  tenant_id	 = "${data.azurerm_client_config.current.tenant_id}"
 
   enabled_for_deployment          = true
   enabled_for_template_deployment = true
